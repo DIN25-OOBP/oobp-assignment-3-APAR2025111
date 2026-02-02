@@ -54,20 +54,20 @@ class Food {
 /* Write your Task 2 solution here */
 
 class Refrigerator {
-  arr: Food[];
+  food: Food[];
   constructor() {
-    this.arr = [];
+    this.food = [];
   }
   addFood(a: Food): void {
-    this.arr.push(a);
+    this.food.push(a);
   }
 
   getContents(): string[] {
     let name_string: string[] = [];
-    let var_size: number = this.arr.length;
+    let var_size: number = this.food.length;
 
     for (let i = 0; i < var_size; i++) {
-      let temp: string = this.arr[i].name;
+      let temp: string = this.food[i].name;
       name_string.push(temp);
     }
 
@@ -75,12 +75,12 @@ class Refrigerator {
   }
 
   eatFood(snack_nm: string): string {
-    let arr_size = this.arr.length;
+    let arr_size = this.food.length;
     for (let i = 0; i < arr_size; i++) {
-      if (this.arr[i].name === snack_nm) {
-        let temp_name = this.arr[i].name;
-        let temp_calories = this.arr[i].calories;
-        this.arr.splice(i,1);
+      if (this.food[i].name === snack_nm) {
+        let temp_name = this.food[i].name;
+        let temp_calories = this.food[i].calories;
+        this.food.splice(i,1);
         return "You ate " + temp_name + " with " + temp_calories + " calories";
 
       }
@@ -93,14 +93,14 @@ class Refrigerator {
 
   getTotalCalories(): number {
     let ans = 0;
-    let arr_size = this.arr.length;
+    let arr_size = this.food.length;
     for (let i = 0; i < arr_size; i++){
-      ans = ans + this.arr[i].calories;
+      ans = ans + this.food[i].calories;
     }
     return ans;
    }
   getNumberOfFoodItems(): number {
-    return this.arr.length;
+    return this.food.length;
   }
 }
 
