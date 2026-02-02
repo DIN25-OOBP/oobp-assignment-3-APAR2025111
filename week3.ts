@@ -25,7 +25,7 @@ class Food {
     return this.name;
   }
   getFoodInfo(): string {
-    return this.name + " has " + this.calories + " calories ";
+    return this.name + " has " + this.calories + " calories";
   }
 }
 
